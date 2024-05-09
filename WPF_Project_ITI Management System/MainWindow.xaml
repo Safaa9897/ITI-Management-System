@@ -1,0 +1,106 @@
+﻿<Window x:Class="WPF_Project_ITI_Management_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Project_ITI_Management_System"
+        mc:Ignorable="d"
+                Title="ITI Management System"  Height="430" Width="600" ResizeMode="NoResize" >
+    <Grid>
+        <!--Window border-->
+        <Border Style="{StaticResource MainBorder}">
+            <!--Base Grid-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <!--Buttons grid-->
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <!--View grid-->
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="290" ></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--Logo-->
+                    <Grid Grid.Row="0">
+                        <Border  Style="{StaticResource LogoBorder}" Margin="0,20,0,10" Width="77" >
+                            <Image Source="Images/iti-logo.png" Style="{StaticResource LogoImage}" Margin="10,7,10,7" />
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Border  Style="{StaticResource ButtonsBorder}">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.5*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <!--Buttons-->
+                                <!--<TextBlock Grid.Row="0" Style="{StaticResource Welcome}" HorizontalAlignment="Center" Margin="0,0,0,6" VerticalAlignment="Bottom" >Welcome!</TextBlock>-->
+                                <!--Teachers-->
+                                <Button Grid.Row="1" Command="{Binding UpdateViewCommand}" CommandParameter="Teachers">
+                                    <TextBlock Grid.Column="1" Text="Instractor" Style="{StaticResource MainButtons}"/>
+                                </Button>
+
+                                <!--Students-->
+                                <Button Grid.Row="2" Command="{Binding UpdateViewCommand}" CommandParameter="Students">
+                                    <TextBlock Grid.Column="1" Text="Students" Style="{StaticResource MainButtons}" />
+                                </Button>
+
+                                <!--Courses-->
+                                <Button Grid.Row="3" Command="{Binding UpdateViewCommand}" CommandParameter="Courses">
+                                    <TextBlock Grid.Column="1" Text="Courses" Style="{StaticResource MainButtons}" />
+                                </Button>
+
+                                <!--Calculator-->
+                                <Button Grid.Row="4" Command="{Binding UpdateViewCommand}" CommandParameter="Calculator">
+                                    <TextBlock Grid.Column="1" Text="Calculator" Style="{StaticResource MainButtons}" />
+                                </Button>
+
+
+                                <!--Canvas-->
+                                <Button Grid.Row="5" Command="{Binding UpdateViewCommand}" CommandParameter="Home">
+                                    <Button.Content>
+                                        <TextBlock Grid.Column="1" Text="Notes" Style="{StaticResource MainButtons}"/>
+                                    </Button.Content>
+                                </Button>
+
+                                <!--Logout Buttons-->
+                                <Button Grid.Row="6" Style="{StaticResource ButtonWithoutBorder}"  Command="{Binding CloseCommand}">
+                                    <TextBlock FontSize="15" Text="Logout" Style="{StaticResource MainButtons}" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="25" />
+                                </Button>
+                            </Grid>
+
+                        </Border>
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.2*"></RowDefinition>
+                        <RowDefinition Height="1.3*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Style="{StaticResource MainWelcome}" >Welcome!</TextBlock>
+                        <TextBlock Grid.Row="1" Style="{StaticResource Management}" > ITI Management System</TextBlock>
+                        <TextBlock Grid.Row="2" Style="{StaticResource MyName}" > By: Safaa Khaled</TextBlock>
+                    </Grid>
+                </Grid>
+                <ContentControl Grid.Column="1" Content="{Binding SelectedViewModel}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

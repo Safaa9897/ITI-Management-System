@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Main Border-->
+    <Style TargetType="Border" x:Key="MainBorder">
+        <Setter Property="Background" Value="LightGray" ></Setter>
+        <Setter Property="CornerRadius" Value="20"></Setter>
+        <Setter Property="BorderBrush" Value="LightGray"></Setter>
+        <Setter Property="BorderThickness" Value="0.2"></Setter>
+    </Style>
+
+    <!--LogoBorder-->
+    <Style TargetType="Border" x:Key="LogoBorder">
+        <Setter Property="Width" Value="70"/>
+        <Setter Property="Height" Value="70"/>
+        <Setter Property="CornerRadius" Value="205"></Setter>
+        <Setter Property="BorderBrush" Value="#485B73"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="Opacity" Value=" 80"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!--Buttons Border-->
+    <Style TargetType="Border" x:Key="ButtonsBorder">
+        <Setter Property="Background" Value=" #485B73" ></Setter>
+        <Setter Property="CornerRadius" Value="19"></Setter>
+        <Setter Property="BorderBrush" Value="LightGray"></Setter>
+        <Setter Property="BorderThickness" Value="0.3"></Setter>
+        <Setter Property="Opacity" Value=" 80"></Setter>
+    </Style>
+    <!--Taps Border-->
+    <Style TargetType="Border" x:Key="TabsBorder">
+        <Setter Property="Background" Value=" LightGray" ></Setter>
+        <Setter Property="CornerRadius" Value="19"></Setter>
+        <Setter Property="BorderBrush" Value="LightGray"></Setter>
+        <Setter Property="BorderThickness" Value="0.3"></Setter>
+        <Setter Property="Opacity" Value=" 80"></Setter>
+    </Style>
+</ResourceDictionary>

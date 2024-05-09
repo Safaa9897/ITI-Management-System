@@ -1,0 +1,131 @@
+﻿<UserControl x:Class="WPF_Project_ITI_Management_System.Views.CalculatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Project_ITI_Management_System.Views"
+             mc:Ignorable="d" 
+                    d:DesignHeight="400" d:DesignWidth="480" Padding="5">
+    <Grid>
+        <Border Style="{StaticResource TabsBorder}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource TabsTitle}" Grid.Row="0" Text="Calculator"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="1" Margin="0 0 0 30" BorderBrush="DarkRed" BorderThickness="2" CornerRadius="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="2.5*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <TextBox x:Name="Text_Result" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" Style="{StaticResource CalculatorText}" Height="56" Width="180"/>
+                            </Grid>
+                            <Grid  Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource Calculator}" Content="Clear" x:Name="Clear" Click="Clear_Button"></Button>
+                                <Grid Grid.Row="0" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" x:Name="power" Style="{StaticResource Calculator}" Content="^" Click="Power_Click" Grid.ColumnSpan="2" Height="28" Margin="0,5,44,0" VerticalAlignment="Top"></Button>
+                                    <Button Grid.Column="1" x:Name="Divid" Style="{StaticResource Calculator}" Content="/" Click="Divid_click"></Button>
+                                </Grid>
+
+                                <Grid Grid.Row="1" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Click="number" Style="{StaticResource Calculator}"  Content="7"></Button>
+                                    <Button Grid.Column="1" Click="number" Style="{StaticResource Calculator}"  Content="8"></Button>
+                                </Grid>
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Click="number" Style="{StaticResource Calculator}"  Content="9"></Button>
+                                    <Button Grid.Column="1" x:Name="Multiply" Style="{StaticResource Calculator}"  Content="*" Click="Multyply_click"></Button>
+                                </Grid>
+
+                                <Grid Grid.Row="2" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Click="number" Style="{StaticResource Calculator}"  Content="4"></Button>
+                                    <Button Grid.Column="1" Click="number" Style="{StaticResource Calculator}"  Content="5"></Button>
+                                </Grid>
+                                <Grid Grid.Row="2" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Click="number" Style="{StaticResource Calculator}"  Content="6"></Button>
+                                    <Button Grid.Column="1" x:Name="Sub" Style="{StaticResource Calculator}"  Content="-" Click="Sub_click"></Button>
+                                </Grid>
+
+
+                                <Grid Grid.Row="3" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Click="number" Style="{StaticResource Calculator}"  Content="1"></Button>
+                                    <Button Grid.Column="1" Click="number" Style="{StaticResource Calculator}"  Content="2"></Button>
+                                </Grid>
+                                <Grid Grid.Row="3" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Click="number" Style="{StaticResource Calculator}"  Content="3"></Button>
+                                    <Button Grid.Column="1" x:Name="Add" Style="{StaticResource Calculator}"  Content="+" Click="Add_click"></Button>
+                                </Grid>
+
+                                <Grid Grid.Row="4" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Click="number" Style="{StaticResource Calculator}"  Content="0"></Button>
+                                </Grid>
+                                <Grid Grid.Row="4" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button x:Name="Equal" Style="{StaticResource Calculator}"  Content="=" Click="Equal_click"></Button>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

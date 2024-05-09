@@ -1,0 +1,104 @@
+﻿<Window x:Class="WPF_Project_ITI_Management_System.Views.AddCoursesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Project_ITI_Management_System.Views"
+        mc:Ignorable="d"
+           Title="AddCoursesWindow" Height="300" Width="600" ResizeMode="NoResize">
+    <Border Style="{StaticResource MainBorder}" Padding="10" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource TitleForAddWindow}" HorizontalAlignment="Left"  VerticalAlignment="Top" Text="Course Information" />
+
+            <Grid  Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Course ID" Style="{StaticResource SubTitleForAddWindow}" />
+                    <TextBox Grid.Column="1" Text="{Binding Course_ID}"  Style="{StaticResource AddText}"/>
+                    <Rectangle Grid.Column="1" Height="1" VerticalAlignment="Bottom" Stroke="DarkRed" StrokeThickness="2" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.8*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Style="{StaticResource SubTitleForAddWindow}"  Text="Course Name"/>
+                    <TextBox Grid.Column="1" Text="{Binding Course_Name}"   Style="{StaticResource AddText}"/>
+                    <Rectangle Grid.Column="1" Height="1" VerticalAlignment="Bottom" Stroke="DarkRed" StrokeThickness="2" />
+                </Grid>
+            </Grid>
+
+            <Grid  Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Student First Name" Style="{StaticResource SubTitleForAddWindow}"/>
+                    <TextBox Grid.Column="1" Text="{Binding CourseStudent_FName}"  Style="{StaticResource AddText}"/>
+                    <Rectangle Grid.Column="1" Height="1" VerticalAlignment="Bottom" Stroke="DarkRed" StrokeThickness="2" />
+                </Grid>
+            </Grid>
+
+            <Grid  Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Student Last Name" Style="{StaticResource SubTitleForAddWindow}"/>
+                    <TextBox Grid.Column="1" Text="{Binding CourseStudent_LName}"  Style="{StaticResource AddText}"/>
+                    <Rectangle Grid.Column="1" Height="1" VerticalAlignment="Bottom" Stroke="DarkRed" StrokeThickness="2" />
+                </Grid>
+            </Grid>
+
+            <Grid  Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.4*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Instractor Name" Style="{StaticResource SubTitleForAddWindow}"/>
+                    <TextBox Grid.Column="1" Text="{Binding CourseInstractor_Name}" Style="{StaticResource AddText}"/>
+                    <Rectangle Grid.Column="1" Height="1" VerticalAlignment="Bottom" Stroke="DarkRed" StrokeThickness="2" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock  Grid.Column="0" Text="Grade" Style="{StaticResource SubTitleForAddWindow}"/>
+                    <TextBox  Grid.Column="1" Text="{Binding Grade}" Style="{StaticResource AddText}"/>
+                    <Rectangle Grid.Column="1" Height="1" VerticalAlignment="Bottom" Stroke="DarkRed" StrokeThickness="2" />
+                </Grid>
+            </Grid>
+
+            <Button Command="{Binding AddNewCourseCommand}" Grid.Row="6" Style="{StaticResource Save}" Content="Save" HorizontalAlignment="Right" />
+        </Grid>
+    </Border>
+</Window>
